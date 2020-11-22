@@ -9,8 +9,8 @@ class App extends Component {
       <div className='App'>
         <p>Header</p>
         <p>Home</p>
-        <p>Current Weather</p>
-        <p>five Day Forecast</p>
+        <p>Weather</p>
+        
       </div>
     );
   }
