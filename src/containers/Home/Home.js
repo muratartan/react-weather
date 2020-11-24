@@ -6,11 +6,16 @@ import './Home.css';
 import Button from '../../components/Buttons/Button/Button';
 
 class Home extends Component {
+
+    getWeatherHandler = () => {
+        this.props.history.push('/weather');
+    };
+
     render () {
         return (
             <div className='Home'>
                 <Input placeholder='Search location...' />
-                <Button btnType='Search'><BsSearch /></Button>
+                <Button btnType='Search' clicked={this.getWeatherHandler} ><BsSearch /></Button>
             </div>
         );
     }
