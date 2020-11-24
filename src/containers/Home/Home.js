@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {BsSearch} from 'react-icons/bs';
 
 import Input from '../../components/Input/Input';
 import './Home.css';
@@ -9,6 +10,7 @@ class Home extends Component {
         return (
             <div className='Home'>
                 <Input placeholder='Search location...' />
+                <Button><BsSearch /></Button>
             </div>
         );
     }

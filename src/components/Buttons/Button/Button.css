@@ -1,0 +1,16 @@
+.Button {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    background-color: rgba(72, 72, 72, .3);
+    font-size: 18px;
+    color:whitesmoke;
+    
+}
+
