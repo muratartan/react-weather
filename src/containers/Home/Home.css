@@ -7,3 +7,15 @@
     align-items: center;
     justify-content: center;
 }
+
+.SearchInput {
+    display: flex;
+}
+
+.Title {
+    color: snow;
+    font-weight: 200;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    margin-bottom: 70px;
+    font-size: 40px;
+}
