@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import './CurrentWeather.css';
 import img from '../../assets/icons/11n.png';
+import Button from '../Buttons/Button/Button';
+import { FaRegStar } from 'react-icons/fa';
 
 class CurrentWeather extends Component {
     render () {
@@ -22,6 +24,7 @@ class CurrentWeather extends Component {
                         <p>Clouds:</p>
                     </div>
                 </div>
+                <Button btnType='Add'><FaRegStar /></Button>
             </div>
         );
     }

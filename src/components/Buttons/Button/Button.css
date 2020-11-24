@@ -18,5 +18,15 @@
 
 .Remove {}
 
-.Add {}
+.Add {
+    background-color: darkseagreen;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+    color: whitesmoke;
+}
 
