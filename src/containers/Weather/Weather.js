@@ -12,7 +12,7 @@ class Weather extends Component {
             <div className='Weather'>
                <div className='WeatherLeftLayout'>
                    <Input />
-                    <div>Current Weather</div>
+                   <CurrentWeather />
                     <div>Favourites</div>
                </div>
                <div className='WeatherRightLayout'>forecast</div>
