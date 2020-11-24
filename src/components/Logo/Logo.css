@@ -20,6 +20,7 @@ img {
     color:teal;
     font-weight: 600;
     font-family:"Acme";
+    letter-spacing: 1px;
 }
 
 .App-type {
