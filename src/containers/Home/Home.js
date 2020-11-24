@@ -10,7 +10,7 @@ class Home extends Component {
         return (
             <div className='Home'>
                 <Input placeholder='Search location...' />
-                <Button><BsSearch /></Button>
+                <Button btnType='Search'><BsSearch /></Button>
             </div>
         );
     }
