@@ -1,5 +1,46 @@
 .CurrentWeatherCard {
     width: 425px;
     height: 275px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+.CityName {
+    color: seashell;
+    font-size: 20px;
+    font-family: "Amaranth" , sans-serif;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+.WeatherStatus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Temp {
+    font-size: 35px;
+    color: seashell;
+    font-family: "Autour One" , sans-serif;
+    margin: 0 15px;
+}
+
+.WeatherDetails {
+    display: flex;
+}
+
+.Details {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 25px;
+    box-sizing: border-box;
+}
+
+.Details p {
+    color: seashell;
+    margin-top: 5px;
 }
