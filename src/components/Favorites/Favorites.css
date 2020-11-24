@@ -1,0 +1,38 @@
+.FavoritesCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 425px;
+    height: 55px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.FavoritesCard:hover {
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.FavoritesCard img {
+    height: 65px;
+}
+
+.City {
+    font-size: 18px;
+    font-family: "Amaranth", sans-serif;
+    color: seashell;
+    width: 100%;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.Temperature {
+    font-family: "Autour One" ,sans-serif;
+    color: seashell;
+    font-size: 20px;
+}
