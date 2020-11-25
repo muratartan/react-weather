@@ -25,3 +25,10 @@
     flex-direction: column;
     justify-content: center;
 }
+
+.WeatherLeftLayout span {
+    color: seashell;
+    font-size: 13px;
+    padding: 0 0 10px 5px;
+    letter-spacing: 1px;
+}

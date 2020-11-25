@@ -14,6 +14,7 @@ class Weather extends Component {
                <div className='WeatherLeftLayout'>
                    <Input placeholder='Search location...' />
                    <CurrentWeather />
+                   <span>Favorite Locations</span>
                     <Favorites />
                </div>
                <div className='WeatherRightLayout'>forecast</div>
