@@ -9,6 +9,7 @@ const forecast = () => {
     
         return (
             <div className='Forecast'>
+                <h2 className='LocationName'>Trabzon/TR</h2>
                 <TabNavigator />
                 <HourlyCard />
                 
