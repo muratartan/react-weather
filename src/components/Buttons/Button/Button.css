@@ -16,7 +16,13 @@
     color:whitesmoke;
 }
 
-.Remove {}
+.Remove {
+    position: absolute;
+    left: -35px;
+    font-size: 25px;
+    background-color: transparent;
+    color: rgb(226, 34, 34);
+}
 
 .Add {
     background-color: darkseagreen;

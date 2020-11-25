@@ -10,10 +10,19 @@
     margin-bottom: 10px;
     cursor: pointer;
     background-color: rgba(0, 0, 0, .4);
+    position: relative;
 }
 
 .FavoritesCard:hover {
     background-color: rgba(0, 0, 0, .7);
+}
+
+.FavoritesCard button {
+    visibility: hidden;
+}
+
+.FavoritesCard:hover button {
+    visibility: visible;
 }
 
 .FavoritesCard img {
