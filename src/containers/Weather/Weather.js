@@ -17,7 +17,9 @@ class Weather extends Component {
                    <span>Favorite Locations</span>
                     <Favorites />
                </div>
-               <div className='WeatherRightLayout'>forecast</div>
+               <div className='WeatherRightLayout'>
+                   <Forecast />
+               </div>
             </div>
         );
     }
