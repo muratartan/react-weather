@@ -1,6 +1,5 @@
 import React from 'react';
 import { BsFillDropletFill } from 'react-icons/bs';
-import { WiBarometer } from 'react-icons/wi';
 import { FiWind } from 'react-icons/fi';
 import { IoIosCloud, IoMdTimer } from 'react-icons/io';
 

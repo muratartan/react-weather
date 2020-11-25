@@ -11,8 +11,8 @@ const forecast = () => {
             <div className='Forecast'>
                 <h2 className='LocationName'>Trabzon/TR</h2>
                 <TabNavigator />
-                <HourlyCard />
-                
+               
+                <WeeklyCard />
             </div>
         );
     }

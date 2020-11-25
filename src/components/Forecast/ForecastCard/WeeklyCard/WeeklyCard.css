@@ -1,0 +1,54 @@
+.WeeklyCard{
+    width: 600px;
+    height: 160px;
+    background-color: rgba(0,0,0,.5);
+    border-radius: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+.Date p {
+    color: seashell;
+    font-size: 15px;
+    margin:0;
+    font-family: "Tauri",sans-serif;
+}
+
+.WeeklyForecast {    
+    display: flex;
+    margin: 0 20px;
+    align-items: center;
+}
+
+
+
+.WeeklyDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin:0 15px
+}
+
+.WeeklyDetails p{
+    color:seashell;
+    margin:4px;
+    font-size: 15px;
+    font-family: "Tauri",sans-serif;
+}
+
+.DN-Temp {
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.DN-Temp p {
+    color: seashell;
+    font-size: 25px;
+    font-family: "Amaranth" , sans-serif;
+    margin: 10px 0;
+}
