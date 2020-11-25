@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import './CurrentWeather.css';
 import img from '../../assets/icons/11n.png';
 import Button from '../Buttons/Button/Button';
 import { FaRegStar } from 'react-icons/fa';
 
-class CurrentWeather extends Component {
-    render () {
+const currentWeather = () => {
+
         return (
             <div className='CurrentWeatherCard'>
                 <p className='CityName'>Trabzon / TR</p>
@@ -28,7 +28,5 @@ class CurrentWeather extends Component {
             </div>
         );
     }
-    
-};
 
-export default CurrentWeather;
+export default currentWeather;

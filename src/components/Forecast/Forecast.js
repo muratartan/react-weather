@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import './Forecast.css';
 import TabNavigator from '../TabNavigator/TabNavigator';
 
-class Forecast extends Component {
-    render () {
+const forecast = () => {
+    
         return (
             <div className='Forecast'>
                 <TabNavigator />
+
             </div>
         );
     }
     
-};
 
-export default Forecast;
+export default forecast;
