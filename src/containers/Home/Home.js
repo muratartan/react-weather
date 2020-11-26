@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import {BsSearch} from 'react-icons/bs';
+import {connect} from 'react-redux';
 
 import Input from '../../components/Input/Input';
 import './Home.css';
 import Button from '../../components/Buttons/Button/Button';
+import {fetchWeather} from '../../store/actions/index';
 
 class Home extends Component {
 
@@ -18,7 +20,7 @@ class Home extends Component {
     };
 
     getWeatherHandler = () => {
-
+        this.props.onSubmit(this.state.locationName);
         this.props.history.push('/weather');
     };
 
@@ -38,8 +40,13 @@ class Home extends Component {
                 
             </div>
         );
-    }
-    
+    }    
 };
 
-export default Home;
+const mapDispatchToProps = dispatch => {
+    return {
+        onSubmit: (location) => dispatch(fetchWeather(location))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Home);

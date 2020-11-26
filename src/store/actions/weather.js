@@ -18,8 +18,8 @@ export const fetchWeatherFail = () => {
     return {
         type: actionTypes.FETCH_WEATHER_FAIL
     }
-},
+};
 
 export const fetchWeather = (location) => {
 
-}
+};
