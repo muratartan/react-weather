@@ -8,7 +8,6 @@ const modal = props => (
     <div className='Modal'>
         <div className='ModalContent'>
             {props.children}
-            <Button></Button>
         </div>
     </div>
 );
