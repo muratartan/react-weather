@@ -13,14 +13,13 @@ import reducer from './store/reducers/weather';
 const store = createStore(reducer,applyMiddleware(thunk));
 
 ReactDOM.render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <Provider store={store}>
-      <App />
-      </Provider>
-    </React.StrictMode>
-  </BrowserRouter>
-  ,
+  <BrowserRouter> 
+    <Provider store={store}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </Provider>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
