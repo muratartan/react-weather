@@ -6,6 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: fixed;
 }
 
 .WeatherLeftLayout {
@@ -15,15 +16,19 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 .WeatherRightLayout {
     width: 50%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    box-sizing: border-box;
+    padding: 100px 0 50px 0;
 }
 
 .WeatherLeftLayout span {
@@ -32,3 +37,15 @@
     padding: 0 0 10px 5px;
     letter-spacing: 1px;
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.WeatherRightLayout::-webkit-scrollbar {
+    display: none;
+  }
+  
+ 
+  /* Hide scrollbar for Chrome, Safari and Opera */
+.WeatherLeftLayout::-webkit-scrollbar {
+    display: none;
+  }
+   

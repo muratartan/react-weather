@@ -9,6 +9,7 @@
     padding: 0 15px;
     box-shadow: 0 3px 2px 0 rgb(44, 38, 59);
     position:fixed;
+    z-index: 100;
 }
 
 a {
