@@ -12,16 +12,16 @@ const currentWeather = props => {
                 <p className='CityName'>{props.locationName}</p>
                 <div className='WeatherStatus'>
                     <img src={img} alt='weather' />
-                    <p className='Temp'>25</p>
+                    <p className='Temp'>{props.currentData.temp}</p>
                 </div>
                 <div className='WeatherDetails'>
                     <div className='Details'>
-                        <p>Wind:</p>
-                        <p>Pressure:</p>
+                        <p>Wind:{props.currentData.wind_speed}</p>
+                        <p>Pressure:{props.currentData.pressure}</p>
                     </div>
                     <div className='Details'>
-                        <p>Humidity:</p>
-                        <p>Clouds:</p>
+                        <p>Humidity:%{props.currentData.humidity}</p>
+                        <p>Clouds:%{props.currentData.clouds}</p>
                     </div>
                 </div>
                 <Button btnType='Add'><FaRegStar /></Button>

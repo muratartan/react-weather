@@ -15,20 +15,20 @@ const styles = {
 const hourlyCard = props => (
     <div className='Hourly-Card'>
         <div className='Hour'>
-            <p>18:00</p>
+            <p>{props.time}</p>
         </div>
         <div className='Hourly-Forecast'>
             <img src={img} alt='img'/>
             <div className='An-Hour-Forecast'>
-                <p className='Hour-Temp'>25°C</p>
-                <p>Rain</p>
+                <p className='Hour-Temp'>{props.temp}°C</p>
+                <p>{props.weather[0].main}</p>
             </div>
         </div>
         <div className='Hourly-Details'>
-            <p><BsFillDropletFill style={{color:'#00a2ff',...styles}}/> % 65</p>
-            <p><IoMdTimer style={{color:'#ff6f00',...styles}} /> 1022 hpa</p>
-            <p><FiWind style={{...styles}}/> 2.09 m/s</p>
-            <p><IoIosCloud style={{...styles}}/> % 90</p>
+            <p><BsFillDropletFill style={{color:'#00a2ff',...styles}}/> %{props.humidity}</p>
+            <p><IoMdTimer style={{color:'#ff6f00',...styles}} /> {props.pressure} hpa</p>
+            <p><FiWind style={{...styles}}/> {props.wind} m/s</p>
+            <p><IoIosCloud style={{...styles}}/> % {props.clouds}</p>
         </div>
     </div>
 );
