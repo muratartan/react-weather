@@ -45,3 +45,20 @@
     color: seashell;
     margin-top: 5px;
 }
+
+.Time {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background-color:  rgba(58, 57, 57, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Time p {
+    color: seashell;
+    font-size: 13px;
+    margin:0;
+    font-family: "Tauri",sans-serif;
+}

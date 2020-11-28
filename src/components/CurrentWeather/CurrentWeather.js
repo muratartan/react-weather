@@ -9,7 +9,8 @@ import Spinner from '../Spinner/Spinner';
 const currentWeather = props => {
 
     const temp = Math.round(props.currentData.temp-273.15);
-    const wind_speed = Math.round(props.currentData.wind_speed/3.6)
+    const wind_speed = Math.round(props.currentData.wind_speed/3.6);
+    const time = new Date(props.currentData.dt*1000).toLocaleTimeString().slice(0,-3);
 
         return (
             <div className='CurrentWeatherCard'>
@@ -18,6 +19,9 @@ const currentWeather = props => {
                <div>
                <p className='CityName'>{props.locationName}</p>
                 <div className='WeatherStatus'>
+                    <div className='Time'>
+                        <p>{time}</p>
+                    </div>
                     <img src={img} alt='weather' />
                     <p className='Temp'>{temp}°C</p>
                 </div>
