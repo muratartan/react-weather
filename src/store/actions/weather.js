@@ -1,9 +1,10 @@
 import axios from '../../axios-weather';
 import * as actionTypes from './actionTypes';
 
-export const fetchWeatherStart = () => {
+export const fetchWeatherStart = (location) => {
     return {
-        type: actionTypes.FETCH_WEATHER_START
+        type: actionTypes.FETCH_WEATHER_START,
+        location: location
     }
 };
 
@@ -23,7 +24,7 @@ export const fetchWeatherFail = (error) => {
 
 export const fetchWeather = (location) => {
     return dispatch => {
-        dispatch(fetchWeatherStart)
+        dispatch(fetchWeatherStart(location))
         axios.get('/onecall?lat=33.441792&lon=-94.037689&appid=')
             .then(response => {
                 console.log(response);

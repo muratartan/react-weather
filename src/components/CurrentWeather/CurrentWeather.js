@@ -5,11 +5,11 @@ import img from '../../assets/icons/11n.png';
 import Button from '../Buttons/Button/Button';
 import { FaRegStar } from 'react-icons/fa';
 
-const currentWeather = () => {
+const currentWeather = props => {
 
         return (
             <div className='CurrentWeatherCard'>
-                <p className='CityName'>Trabzon / TR</p>
+                <p className='CityName'>{props.locationName}</p>
                 <div className='WeatherStatus'>
                     <img src={img} alt='weather' />
                     <p className='Temp'>25</p>

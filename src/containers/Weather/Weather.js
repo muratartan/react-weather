@@ -14,12 +14,17 @@ class Weather extends Component {
             <div className='Weather'>
                <div className='WeatherLeftLayout'>
                    <Input placeholder='Search location...' />
-                   <CurrentWeather />
+                   <CurrentWeather 
+                        locationName={this.props.location} 
+                        currentData= {this.props.current}/>
                    <span>Favorite Locations</span>
                     <Favorites />
                </div>
                <div className='WeatherRightLayout'>
-                   <Forecast />
+                   <Forecast 
+                        locationName={this.props.location} 
+                        hourlyData={this.props.hourly} 
+                        weeklyData={this.props.weekly}/>
                </div>
                
             </div>
@@ -29,7 +34,10 @@ class Weather extends Component {
 
 const mapStateToProps = state => {
     return {
-        
+        current: state.currentWeather,
+        hourly: state.hourlyForecast,
+        weekly: state.weeklyForecast,
+        location: state.location
     }
 }
 
