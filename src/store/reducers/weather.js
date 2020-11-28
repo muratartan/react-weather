@@ -22,9 +22,9 @@ const reducer = (state= initialState, action) => {
             case actionTypes.FETCH_WEATHER_SUCCESS:
                 return updateObject(state, {
                     loading: false,
-                    currentWeather: '',
-                    hourlyForecast: '',
-                    weeklyForecast: '',
+                    currentWeather: action.data.current,
+                    hourlyForecast: action.data.hourly,
+                    weeklyForecast: action.data.daily,
                 })
             case actionTypes.FETCH_WEATHER_FAIL:
                 return updateObject(state, {
