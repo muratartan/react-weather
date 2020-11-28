@@ -4,12 +4,16 @@ import './CurrentWeather.css';
 import img from '../../assets/icons/11n.png';
 import Button from '../Buttons/Button/Button';
 import { FaRegStar } from 'react-icons/fa';
+import Spinner from '../Spinner/Spinner';
 
 const currentWeather = props => {
 
         return (
             <div className='CurrentWeatherCard'>
-                <p className='CityName'>{props.locationName}</p>
+              {
+              props.currentData ? 
+               <div>
+               <p className='CityName'>{props.locationName}</p>
                 <div className='WeatherStatus'>
                     <img src={img} alt='weather' />
                     <p className='Temp'>{props.currentData.temp}</p>
@@ -25,6 +29,8 @@ const currentWeather = props => {
                     </div>
                 </div>
                 <Button btnType='Add'><FaRegStar /></Button>
+               </div> : <Spinner />
+               }
             </div>
         );
     }
