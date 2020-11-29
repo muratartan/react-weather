@@ -6,10 +6,10 @@ export const addFavorites = (location) => {
         favorite: location
     }
 }
-export const removeFavorites = (location) => {
+export const removeFavorites = (index) => {
     return {
         type: actionTypes.REMOVE_FAVORITES,
-        favorite: location
+        index: index
     }
 }
 export const removeAllFavorites = (location) => {

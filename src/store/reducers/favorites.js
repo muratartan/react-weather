@@ -14,9 +14,10 @@ const reducer = (state= initialState, action) => {
             });
 
         case actionTypes.REMOVE_FAVORITES:
-            return {
-                ...state
-            };
+            const newFavorites=state.favorites.filter((item,index) => index !== action.index)
+            return updateObject(state,{
+                favorites: newFavorites
+            })
 
         case actionTypes.REMOVE_ALL_FAVORITES:
             return {
