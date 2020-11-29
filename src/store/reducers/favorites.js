@@ -20,9 +20,9 @@ const reducer = (state= initialState, action) => {
             });
 
         case actionTypes.REMOVE_ALL_FAVORITES:
-            return {
-                ...state
-             };
+            return updateObject(state, {
+                favorites: []
+            })
         default:
             return state;
     }

@@ -56,8 +56,13 @@ class Weather extends Component {
                         locationName={this.props.location} 
                         currentData= {this.props.current}
                         clicked= {this.addFavoritesHandler}/>
-                   <span>Favorite Locations</span>
-                   <Button btnType='Remove-All'>Remove All</Button>
+                   {this.props.favorites.length ? <span>Favorite Locations</span> : null}
+                   {
+                       this.props.favorites.length >= 2 
+                       ? <Button 
+                            btnType='Remove-All'
+                            clicked={this.removeAllFavoritesHandler}>Remove All</Button> : null
+                   }
                     {
                     this.props.favorites.map((item,index) => (
                         <Favorites 
@@ -93,7 +98,7 @@ const mapDispatchToProps = dispatch => {
     return {
         onAddFavorites: (location) => dispatch(actions.addFavorites(location)),
         onRemoveFavorites: (index) => dispatch(actions.removeFavorites(index)),
-        onRemoveAllFavorites: dispatch(actions.removeAllFavorites),
+        onRemoveAllFavorites: () => dispatch(actions.removeAllFavorites()),
         onSubmit: (location) => dispatch(actions.fetchWeather(location))
     }
 }
