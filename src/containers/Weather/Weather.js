@@ -36,7 +36,13 @@ class Weather extends Component {
                         currentData= {this.props.current}
                         clicked= {this.addFavoritesHandler}/>
                    <span>Favorite Locations</span>
-                    <Favorites />
+                    {
+                    this.props.favorites.map(item => (
+                        <Favorites 
+                            locationName = {item.location}
+                            id = {item.id}/>
+                    ))
+                    }
                </div>
                <div className='WeatherRightLayout'>
                    <Forecast 
@@ -55,7 +61,8 @@ const mapStateToProps = state => {
         current: state.weather.currentWeather,
         hourly: state.weather.hourlyForecast,
         weekly: state.weather.weeklyForecast,
-        location: state.weather.location
+        location: state.weather.location,
+        favorites: state.favoriteLocations.favorites
     }
 };
 
