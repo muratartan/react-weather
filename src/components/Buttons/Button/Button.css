@@ -44,3 +44,15 @@
     color: whitesmoke;
 }
 
+.Remove-All {
+    background-color: rgba(160, 18, 18, 0.5);
+    padding: 7px 15px;
+    color: seashell;
+    border-radius: 3px;
+    transition: all .3s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.Remove-All:hover {
+    background-color: #ff2f2f;
+}

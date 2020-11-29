@@ -57,6 +57,7 @@ class Weather extends Component {
                         currentData= {this.props.current}
                         clicked= {this.addFavoritesHandler}/>
                    <span>Favorite Locations</span>
+                   <Button btnType='Remove-All'>Remove All</Button>
                     {
                     this.props.favorites.map((item,index) => (
                         <Favorites 
