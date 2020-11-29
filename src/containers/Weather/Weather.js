@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {BsSearch} from 'react-icons/bs';
 
 import './Weather.css';
 import CurrentWeather from '../../components/CurrentWeather/CurrentWeather';
@@ -10,6 +11,10 @@ import Favorites from '../../components/Favorites/Favorites';
 import * as actions from '../../store/actions/index';
 
 class Weather extends Component {
+
+    state = {
+        locationName: ''
+    };
 
     addFavoritesHandler = () => {
         this.props.onAddFavorites({
@@ -26,11 +31,27 @@ class Weather extends Component {
         this.props.onRemoveAllFavorites()
     }
 
+    getWeatherHandler = () => {
+        this.props.onSubmit(this.state.locationName);
+    };
+
+    inputChangedHandler = (event) => {
+        this.setState({
+            locationName: event.target.value
+        })
+    };
+
     render () {
         return (
             <div className='Weather'>
                <div className='WeatherLeftLayout'>
-                   <Input placeholder='Search location...' />
+                   <div style={{display:'flex'}}>
+                        <Input 
+                        placeholder='Search location...'
+                        value={this.state.locationName}
+                        changed={event =>this.inputChangedHandler(event) } />
+                        <Button btnType='Search' clicked={this.getWeatherHandler} ><BsSearch /></Button>
+                   </div>
                    <CurrentWeather 
                         locationName={this.props.location} 
                         currentData= {this.props.current}
@@ -70,7 +91,8 @@ const mapDispatchToProps = dispatch => {
     return {
         onAddFavorites: (location) => dispatch(actions.addFavorites(location)),
         onRemoveFavorites: () => dispatch(actions.removeFavorites()),
-        onRemoveAllFavorites: dispatch(actions.removeAllFavorites)
+        onRemoveAllFavorites: dispatch(actions.removeAllFavorites),
+        onSubmit: (location) => dispatch(actions.fetchWeather(location))
     }
 }
 

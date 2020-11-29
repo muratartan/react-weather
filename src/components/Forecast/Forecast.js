@@ -52,7 +52,7 @@ const Forecast = props => {
 
         return (
             <div className='Forecast'>
-                <h2 className='LocationName'>Trabzon/TR</h2>
+                <h2 className='LocationName'>{props.locationName}</h2>
                 <TabNavigator value={value} changed={(_,value)=>tabNavigatorHandler(value)} />
                 {value === 0 ? hourlyData : weeklyData}                 
                 
