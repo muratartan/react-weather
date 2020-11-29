@@ -4,13 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';
-import {createStore, applyMiddleware} from 'redux';
+import {createStore, applyMiddleware, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 
-import reducer from './store/reducers/weather';
+import WeatherReducer from './store/reducers/weather';
+import favoritesReducer from './store/reducers/favorites';
 
-const store = createStore(reducer,applyMiddleware(thunk));
+const rootReducer = combineReducers({
+    weather: WeatherReducer,
+    favorites: favoritesReducer
+});
+
+const store = createStore(rootReducer,applyMiddleware(thunk));
 
 ReactDOM.render(
   <BrowserRouter> 
