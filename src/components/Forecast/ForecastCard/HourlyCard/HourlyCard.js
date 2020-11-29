@@ -16,7 +16,7 @@ const hourlyCard = props => {
 
     const time = new Date(props.time*1000).toLocaleTimeString().slice(0,-3);
     const temp = Math.round(props.temp- 273.15);
-    const wind_speed = Math.round(props.wind*3.6)
+    const wind_speed = Math.round(props.wind*3.6);
 
    return (
     <div className='Hourly-Card'>
