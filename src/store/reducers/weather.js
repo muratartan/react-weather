@@ -6,7 +6,6 @@ const initialState = {
     currentWeather: null,
     hourlyForecast: null,
     weeklyForecast: null,
-    favorites: null,
     error: null,
     loading: false
 };
