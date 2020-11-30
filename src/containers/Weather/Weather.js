@@ -37,7 +37,10 @@ class Weather extends Component {
     };
 
     removeAllFavoritesHandler = () => {
-        this.props.onRemoveAllFavorites()
+        this.props.onRemoveAllFavorites();
+        this.setState({
+            isFavorite: false
+        })
     }
 
     getWeatherHandler = () => {

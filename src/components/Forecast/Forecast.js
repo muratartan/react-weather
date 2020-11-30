@@ -5,7 +5,6 @@ import TabNavigator from '../TabNavigator/TabNavigator';
 import HourlyCard from './ForecastCard/HourlyCard/HourlyCard';
 import WeeklyCard from './ForecastCard/WeeklyCard/WeeklyCard';
 import Spinner from '../Spinner/Spinner';
-import weeklyCard from './ForecastCard/WeeklyCard/WeeklyCard';
 
 const Forecast = props => {
 
@@ -22,7 +21,7 @@ const Forecast = props => {
         hourlyData = (
             props.hourlyData.map(item => (
                 <HourlyCard 
-                    id={item.dt}
+                    key={item.dt}
                     time={item.dt}
                     temp={item.temp}
                     pressure={item.pressure}
@@ -38,7 +37,7 @@ const Forecast = props => {
         weeklyData = (
             props.weeklyData.map(item => (
                 <WeeklyCard
-                    id={item.dt}
+                    key={item.dt}
                     date={item.dt}
                     temp={item.temp}
                     pressure={item.pressure}
