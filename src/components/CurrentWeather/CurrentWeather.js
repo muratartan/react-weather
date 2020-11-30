@@ -3,7 +3,7 @@ import React from 'react';
 import './CurrentWeather.css';
 import img from '../../assets/icons/11n.png';
 import Button from '../Buttons/Button/Button';
-import { FaRegStar } from 'react-icons/fa';
+import { FaRegStar, FaStar } from 'react-icons/fa';
 import Spinner from '../Spinner/Spinner';
 
 const currentWeather = props => {
@@ -31,7 +31,9 @@ const currentWeather = props => {
                         <p>Clouds:%{props.currentData.clouds}</p>
                     </div>
                 </div>
-                <Button btnType='Add' clicked={props.clicked}><FaRegStar /></Button>
+                <Button btnType='Add' clicked={props.clicked}>
+                    {props.isFavorite ? <FaStar/> : <FaRegStar />}
+                </Button>
                </div> : <Spinner />
                }
             </div>

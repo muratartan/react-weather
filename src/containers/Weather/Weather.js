@@ -13,14 +13,23 @@ import * as actions from '../../store/actions/index';
 class Weather extends Component {
 
     state = {
-        locationName: ''
+        locationName: '',
+        isFavorite: false
     };
 
+    componentDidMount () {
+        setTimeout(()=>{
+            if(this.props.favorites.includes(this.props.location)) this.setState({isFavorite: true});
+            else this.setState({isFavorite:false});
+        },0);
+    }
+
     addFavoritesHandler = () => {
-        this.props.onAddFavorites({
-            location: this.props.location,
-            id: this.props.location
-        });
+        this.props.onAddFavorites(this.props.location);
+        setTimeout(()=>{
+            if(this.props.favorites.includes(this.props.location)) this.setState({isFavorite: true});
+            else this.setState({isFavorite:false});
+        },0);
     };
 
     removeFavoritesHandler = (index) => {
@@ -33,6 +42,10 @@ class Weather extends Component {
 
     getWeatherHandler = () => {
         this.props.onSubmit(this.state.locationName);
+        setTimeout(()=>{
+            if(this.props.favorites.includes(this.props.location)) this.setState({isFavorite: true});
+            else this.setState({isFavorite:false});
+        },0);
     };
 
     inputChangedHandler = (event) => {
@@ -55,7 +68,8 @@ class Weather extends Component {
                    <CurrentWeather 
                         locationName={this.props.location} 
                         currentData= {this.props.current}
-                        clicked= {this.addFavoritesHandler}/>
+                        clicked= {this.addFavoritesHandler}
+                        isFavorite= {this.state.isFavorite}/>
                    {this.props.favorites.length ? <span>Favorite Locations</span> : null}
                    {
                        this.props.favorites.length >= 2 
@@ -66,8 +80,8 @@ class Weather extends Component {
                     {
                     this.props.favorites.map((item,index) => (
                         <Favorites 
-                            locationName = {item.location}
-                            key = {item.id}
+                            locationName = {item}
+                            key = {item}
                             clicked={() => this.removeFavoritesHandler(index)}/>
                     ))
                     }
