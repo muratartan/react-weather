@@ -25,7 +25,9 @@ class Weather extends Component {
     }
 
     addFavoritesHandler = () => {
-        this.props.onAddFavorites(this.props.location);
+        if(!changeFavStarHandler(this.props.favorites, this.props.location)) {
+            this.props.onAddFavorites(this.props.location);
+        };        
         setTimeout(()=>{
             this.setState({isFavorite:changeFavStarHandler(this.props.favorites, this.props.location)});
          },0);
