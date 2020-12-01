@@ -20,9 +20,20 @@ class Home extends Component {
     };
 
     getWeatherHandler = () => {
-        this.props.onSubmit(this.state.locationName);
-        this.props.history.push('/weather');
+        if (this.state.locationName !== '') {
+            this.props.onSubmit(this.state.locationName);
+            this.props.history.push('/weather');
+        }
     };
+
+    getWeatherOnKeyPress = (e) => {
+        if (e.keyCode === 13) {
+            if (this.state.locationName !== '') {
+                this.props.onSubmit(this.state.locationName);
+                this.props.history.push('/weather');
+            }
+        }
+    }
 
     render () {
         return (
@@ -33,6 +44,7 @@ class Home extends Component {
                         <Input 
                         placeholder='Search location...' 
                         value={this.state.locationName}
+                        clicked= {this.getWeatherOnKeyPress}
                         changed={event =>this.inputChangedHandler(event) } />
                         <Button btnType='Search' clicked={this.getWeatherHandler} ><BsSearch /></Button>
                     </div>                   
