@@ -88,7 +88,8 @@ class Weather extends Component {
                         <Favorites 
                             locationName = {item}
                             key = {item}
-                            clicked={() => this.removeFavoritesHandler(index)}/>
+                            clicked={() => this.removeFavoritesHandler(index)}
+                            showFavoriteWeather= {() => this.props.onSubmit(item)}/>
                     ))
                     }
                </div>
