@@ -11,7 +11,7 @@
     box-sizing: border-box;
 }
 
-.Date p {
+.Date {
     color: seashell;
     font-size: 15px;
     margin:0;
@@ -51,4 +51,11 @@
     font-size: 25px;
     font-family: "Amaranth" , sans-serif;
     margin: 10px 0;
+}
+
+.Weather-Condition {
+    color: seashell;
+    font-size: 16px;
+    font-family: "Amaranth" , sans-serif;
+    margin: 7px 0 0 0;
 }
