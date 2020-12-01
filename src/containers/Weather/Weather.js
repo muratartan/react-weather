@@ -50,7 +50,10 @@ class Weather extends Component {
     getWeatherHandler = () => {
         this.props.onSubmit(this.state.locationName);
         setTimeout(()=>{
-            this.setState({isFavorite:changeFavStarHandler(this.props.favorites, this.props.location)});
+            this.setState({
+                locationName: '',
+                isFavorite:changeFavStarHandler(this.props.favorites, this.props.location)
+            });
          },0);
     };
 
