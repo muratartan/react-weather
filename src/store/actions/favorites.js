@@ -16,4 +16,10 @@ export const removeAllFavorites = (location) => {
     return {
         type: actionTypes.REMOVE_ALL_FAVORITES
     }
-}
+};
+
+export const getLocalStorageFavs = () => {
+    return {
+        type: actionTypes.GET_LOCALSTORAGE_FAVS
+    }
+};

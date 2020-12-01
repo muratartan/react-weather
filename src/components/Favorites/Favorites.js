@@ -6,7 +6,7 @@ import './Favorites.css';
 import Button from '../Buttons/Button/Button';
 
 const favorites = props => (
-    <div className='FavoritesCard' onClick={props.showFavoriteWeather}>
+    <div className='FavoritesCard' onClick={props.showFavoriteCurrentWeather}>
         <Button btnType='Remove' clicked={props.clicked}><IoMdRemoveCircleOutline /></Button>
         <p className='City'>{props.locationName}</p>
        <div style={{display: 'flex', alignItems: 'center'}}>

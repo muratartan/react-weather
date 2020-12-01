@@ -11,7 +11,8 @@ import * as actions from './store/actions/index';
 class App extends Component {
 
   componentDidMount() {
-    this.props.onRefreshHandler(localStorage.getItem('locationName'));
+    if(localStorage.key('locationName')) this.props.onRefreshHandler(localStorage.getItem('locationName'));
+    if(localStorage.key('favorites')) this.props.onGetFavorites();
   };
 
   render () {
@@ -27,7 +28,8 @@ class App extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onRefreshHandler: (location) => dispatch(actions.fetchWeather(location))
+    onRefreshHandler: (location) => dispatch(actions.fetchWeather(location)),
+    onGetFavorites: () => dispatch(actions.getLocalStorageFavs())
   }
 }
 

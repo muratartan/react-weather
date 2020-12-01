@@ -2,5 +2,6 @@ export {fetchWeather} from './weather';
 export {
     addFavorites,
     removeFavorites,
-    removeAllFavorites
+    removeAllFavorites,
+    getLocalStorageFavs
 } from './favorites';
