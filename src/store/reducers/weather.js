@@ -13,8 +13,9 @@ const initialState = {
 const reducer = (state= initialState, action) => {
     switch (action.type) {
         case actionTypes.FETCH_WEATHER_START:
+            const locationFixed = action.location.charAt(0).toUpperCase() + action.location.slice(1).toLowerCase();
             return updateObject(state, {
-                location: action.location,
+                location: locationFixed,
                 loading: true,
                 error: null 
             });
