@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './CurrentWeather.css';
-import img from '../../assets/icons/11n.png';
 import Button from '../Buttons/Button/Button';
 import { FaRegStar, FaStar } from 'react-icons/fa';
 import Spinner from '../Spinner/Spinner';
@@ -18,7 +17,7 @@ const currentWeather = props => {
                     <div className='Time'>
                         <p>{new Date(props.currentData.dt*1000).toLocaleTimeString().slice(0,-3)}</p>
                     </div>
-                    <img src={img} alt='weather' />
+                    <img src={require(`../../assets/icons/${props.currentData.weather[0].icon}.png`).default} alt='weather' />
                     <div>
                         <p className='Temp'>{ Math.round(props.currentData.temp-273.15)}°C</p>
                         <p className='WeatherCondition'>{props.currentData.weather[0].main}</p>

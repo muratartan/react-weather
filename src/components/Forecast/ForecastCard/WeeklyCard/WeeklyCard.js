@@ -27,7 +27,7 @@ const weeklyCard = props => {
                      <p className='Weather-Condition'>{props.weather[0].main}</p>
                 </div>
                 <div className='WeeklyForecast'>                    
-                        <img src={img} alt='img' />
+                        <img src={require(`../../../../assets/icons/${props.weather[0].icon}.png`).default} alt='img' />
                     <div className='DayNightForecast'>
                         <div className='DN-Temp'>
                             <FaTemperatureHigh style={{...DNIconStyle, color: '#ff860a'}} />

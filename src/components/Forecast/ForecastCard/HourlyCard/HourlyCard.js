@@ -24,7 +24,7 @@ const hourlyCard = props => {
         <p>{time}</p>
     </div>
     <div className='Hourly-Forecast'>
-        <img src={img} alt='img'/>
+        <img src={require(`../../../../assets/icons/${props.weather[0].icon}.png`).default} alt='img'/>
         <div className='An-Hour-Forecast'>
             <p className='Hour-Temp'>{temp}°C</p>
             <p>{props.weather[0].main}</p>
