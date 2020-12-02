@@ -11,8 +11,10 @@ import * as actions from './store/actions/index';
 class App extends Component {
 
   componentDidMount() {
-    if(localStorage.key('locationName')) this.props.onRefreshHandler(localStorage.getItem('locationName'));
-    if(localStorage.key('favorites')) this.props.onGetFavorites();
+    const locationName = localStorage.getItem('locationName');
+    if(locationName) this.props.onRefreshHandler(localStorage.getItem('locationName'));
+    const favorites = localStorage.getItem('favorites');
+    if(favorites) this.props.onGetFavorites();
   };
 
   render () {
