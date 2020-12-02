@@ -7,7 +7,6 @@
     border-radius: 8px;
     box-sizing: border-box;
     padding: 0 20px;
-    margin-bottom: 10px;
     cursor: pointer;
     background-color: rgba(0, 0, 0, .4);
     position: relative;
@@ -17,11 +16,11 @@
     background-color: rgba(0, 0, 0, .7);
 }
 
-.FavoritesCard button {
+.FavoritesContainer button {
     visibility: hidden;
 }
 
-.FavoritesCard:hover button {
+.FavoritesContainer:hover button {
     visibility: visible;
 }
 
@@ -44,4 +43,11 @@
     font-family: "Autour One" ,sans-serif;
     color: seashell;
     font-size: 20px;
+}
+
+.FavoritesContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
 }

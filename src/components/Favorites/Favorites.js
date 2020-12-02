@@ -6,14 +6,17 @@ import './Favorites.css';
 import Button from '../Buttons/Button/Button';
 
 const favorites = props => (
-    <div className='FavoritesCard' onClick={props.showFavoriteCurrentWeather}>
+    <div className='FavoritesContainer'>
         <Button btnType='Remove' clicked={props.clicked}><IoMdRemoveCircleOutline /></Button>
-        <p className='City'>{props.locationName}</p>
-       <div style={{display: 'flex', alignItems: 'center'}}>
-            <img src={img} alt='weather'/>
-            <p className='Temperature'>25</p>
-       </div>
+        <div className='FavoritesCard' onClick={props.showFavoriteCurrentWeather}>
+            <p className='City'>{props.locationName}</p>
+            <div style={{display: 'flex', alignItems: 'center'}}>
+                <img src={img} alt='weather'/>
+                <p className='Temperature'>25</p>
+            </div>
+        </div>
     </div>
+   
 );
 
 export default favorites;
