@@ -57,6 +57,20 @@ class Weather extends Component {
          },0);
     };
 
+    getWeatherOnKeyPress = (e) => {
+        if (e.keyCode === 13) {
+            if (this.state.locationName !== '') {
+                this.props.onSubmit(this.state.locationName);
+                setTimeout(()=>{
+                    this.setState({
+                        locationName: '',
+                        isFavorite:changeFavStarHandler(this.props.favorites, this.props.location)
+                    });
+                 },0);
+            }
+        }
+    }
+
     inputChangedHandler = (event) => {
         this.setState({
             locationName: event.target.value
@@ -71,6 +85,7 @@ class Weather extends Component {
                         <Input 
                         placeholder='Search location...'
                         value={this.state.locationName}
+                        clicked={this.getWeatherOnKeyPress}
                         changed={event =>this.inputChangedHandler(event) } />
                         <Button btnType='Search' clicked={this.getWeatherHandler} ><BsSearch /></Button>
                    </div>
