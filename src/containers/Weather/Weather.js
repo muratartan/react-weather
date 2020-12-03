@@ -80,6 +80,7 @@ class Weather extends Component {
     render () {
         return (
             <div className='Weather'>
+                <div className='BackImage'></div>
                <div className='WeatherLeftLayout'>
                    <div style={{display:'flex'}}>
                         <Input 
