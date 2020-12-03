@@ -2,5 +2,17 @@
     background-color: rgba(0, 0, 0, .4);
     padding: 0;
     border-radius: 7px;
-    
+}
+
+.Root {
+    width: 600px;
+    background-color: transparent!important;
+    box-shadow: none!important;
+    flex-grow: 1;
+}
+
+@media (max-width:1024px) {
+    .Root {
+        width: 100%;
+    }
 }
