@@ -4,5 +4,15 @@
     font-family: "Amaranth" ,sans-serif;
     font-size: 25px;
     letter-spacing: 2px;
+    width: 100%;
+}
+
+.Forecast {
     width: 600px;
+}
+
+@media (max-width: 1024px) {
+    .Forecast {
+        width: 85%;
+    }
 }
