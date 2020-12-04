@@ -1,5 +1,5 @@
 .WeeklyCard{
-    width: 600px;
+    width: 100%;
     height: 160px;
     background-color: rgba(0,0,0,.5);
     border-radius: 10px;
@@ -10,6 +10,7 @@
     padding: 0 30px;
     box-sizing: border-box;
     position: relative;
+    justify-content: space-evenly;
 }
 
 .DateWeeklyContainer{
@@ -34,8 +35,7 @@
 .WeeklyDetails {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    margin:0 15px
+    margin:0 15px;
 }
 
 .WeeklyDetails div {
@@ -46,7 +46,7 @@
 
 .WeeklyDetails div p{
     color:seashell;
-    margin:4px;
+    margin:2px 0;
     font-size: 15px;
     font-family: "Tauri",sans-serif;
 }
@@ -68,16 +68,10 @@
     color: seashell;
     font-size: 16px;
     font-family: "Amaranth" , sans-serif;
-    margin: 7px 0 0 0;
+    margin: 5px 0 0 0;
 }
 
-@media (max-width: 1024px){
-    .WeeklyCard{
-        width: 100%;
-    }
-}
-
-@media (max-width:600px){
+@media (max-width:660px){
     .WeeklyCard{
         flex-direction: column;
         height: auto;
@@ -89,15 +83,34 @@
     .DateContainer{
         width: 100px;
         padding: 3px 0;
-        background-color: rgba(0,0,0,.3);
-        align-items: center;
-        border-radius: 10px;
         position: absolute;
-        top:5
+        top:5px
     }
     .WeeklyDetails{
         flex-direction: row;
         justify-content: space-evenly;
         width: 100%;
+    }
+}
+
+@media (max-width: 1260px) and (min-width:1024px) {
+    .WeeklyCard {
+        padding:0 15px;
+    }
+
+    .DN-Temp {
+        margin: 0 15px;
+    }
+
+    .WeeklyForecast {
+        margin: 0 10px;
+    }
+
+    .WeeklyDetails {
+        margin: 0;
+    }
+
+    .WeeklyDetails div p {
+        font-size: 14px;
     }
 }

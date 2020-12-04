@@ -2,21 +2,18 @@ import React from 'react';
 import { BsFillDropletFill } from 'react-icons/bs';
 import { FiWind } from 'react-icons/fi';
 import { IoIosCloud, IoMdTimer } from 'react-icons/io';
-
-
-
-import './WeeklyCard.css';
-import img from '../../../../assets/icons/11n.png';
 import { FaTemperatureHigh,FaTemperatureLow } from 'react-icons/fa';
 
+import './WeeklyCard.css';
+
 const styles = {
-    fontSize:18,
+    fontSize:17,
     marginRight:7
 };
 
 const DNIconStyle = {
     fontSize:22,
-    marginRight:12
+    marginRight:10
 }
 
 const weeklyCard = props => {
