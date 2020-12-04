@@ -10,6 +10,7 @@
     justify-content: center;
     padding: 0 20px;
     box-sizing: border-box;
+    position: relative;
 }
 
 .Hour{
@@ -53,9 +54,53 @@
     font-family: "Tauri",sans-serif;
 }
 
-.Hourly-Details p{
+.Hourly-Details p {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.Hourly-Details div p{
     color:seashell;
     margin:4px;
     font-size: 15px;
+}
+
+.HourForecastContainer {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width:1024px) {
+    .Hourly-Card {
+        width: 100%;
+    }
+}
+
+@media (max-width:600px) {
+    .Hourly-Card {
+        display: block;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .Hour {
+        width: 75px;
+        height: 25px;
+        border-radius: 7px;
+        position: absolute;
+        top: 5px;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .Hourly-Details {
+        flex-direction: row;
+        justify-content: space-evenly;
+
+    }
+
+    .HourForecastContainer {
+        flex-direction: column;
+    }
 }
 

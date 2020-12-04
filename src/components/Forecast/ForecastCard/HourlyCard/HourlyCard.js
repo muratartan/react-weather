@@ -20,6 +20,7 @@ const hourlyCard = props => {
 
    return (
     <div className='Hourly-Card'>
+    <div className='HourForecastContainer'>
     <div className='Hour'>
         <p>{time}</p>
     </div>
@@ -30,11 +31,16 @@ const hourlyCard = props => {
             <p>{props.weather[0].main}</p>
         </div>
     </div>
+    </div>
     <div className='Hourly-Details'>
-        <p><BsFillDropletFill style={{color:'#00a2ff',...styles}}/> %{props.humidity}</p>
-        <p><IoMdTimer style={{color:'#ff6f00',...styles}} /> {props.pressure} hPa</p>
-        <p><FiWind style={{...styles}}/> {wind_speed} km/h</p>
-        <p><IoIosCloud style={{...styles}}/> % {props.clouds}</p>
+       <div>
+            <p><BsFillDropletFill style={{color:'#00a2ff',...styles}}/> %{props.humidity}</p>
+            <p><IoMdTimer style={{color:'#ff6f00',...styles}} /> {props.pressure} hPa</p>
+       </div>
+        <div>
+            <p><FiWind style={{...styles}}/> {wind_speed} km/h</p>
+            <p><IoIosCloud style={{...styles}}/> % {props.clouds}</p>
+        </div>
     </div>
 </div>
    )
