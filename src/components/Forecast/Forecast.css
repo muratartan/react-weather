@@ -15,7 +15,7 @@
     .Forecast {
         width: 85%;
         display: flex;
-        align-items: center;
         flex-direction: column;
+        margin:auto
     }
 }
