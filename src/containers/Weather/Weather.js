@@ -81,7 +81,7 @@ class Weather extends Component {
         return (
             <div className='Weather'>
                 <div className='BackImage'></div>
-               <div className='WeatherLeftLayout'>
+                <div className='WeatherLeftLayout'>
                    <div style={{display:'flex'}}>
                         <Input 
                         placeholder='Search location...'
@@ -118,7 +118,6 @@ class Weather extends Component {
                         hourlyData={this.props.hourly} 
                         weeklyData={this.props.weekly}/>
                </div>
-               
             </div>
         );
     }
