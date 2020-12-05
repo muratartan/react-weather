@@ -5,6 +5,9 @@
     font-size: 25px;
     letter-spacing: 2px;
     width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .Forecast {
