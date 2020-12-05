@@ -89,7 +89,7 @@ class Weather extends Component {
                 <div className='BackImage'></div>
                     {
                         this.props.error ? 
-                        <Modal>
+                        <Modal close={this.props.onErrorClose}>
                         <ErrorOutlineIcon style={{fontSize:50,color:'#ff0000'}} />
                         <p>Oops! Something went wrong!</p>
                         <Button btnType='Error' clicked={this.errorClose}>Try Again</Button>

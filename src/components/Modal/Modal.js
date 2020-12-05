@@ -4,7 +4,7 @@ import './Modal.css';
 
 const modal = props => (
 
-    <div className='Modal'>
+    <div className='Modal' onClick={props.close}>
         <div className='ModalContent'>
             {props.children}
         </div>
