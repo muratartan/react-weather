@@ -92,7 +92,7 @@ class Weather extends Component {
                         <Modal>
                         <ErrorOutlineIcon style={{fontSize:50,color:'#ff0000'}} />
                         <p>Oops! Something went wrong!</p>
-                        <Button btnType='Error' clicked={this.errorClose}>Go Home</Button>
+                        <Button btnType='Error' clicked={this.errorClose}>Try Again</Button>
                         </Modal> : null
                     }
                 <div className='WeatherLeftLayout'>
