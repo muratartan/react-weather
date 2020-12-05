@@ -17,7 +17,10 @@ const reducer = (state= initialState, action) => {
             return updateObject(state, {
                 location: locationFixed,
                 loading: true,
-                error: null 
+                error: null,
+                currentWeather: null,
+                hourlyForecast: null,
+                weeklyForecast: null
             });
             case actionTypes.FETCH_WEATHER_SUCCESS:
                 return updateObject(state, {
