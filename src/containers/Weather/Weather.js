@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {BsSearch} from 'react-icons/bs';
+import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 
 import './Weather.css';
 import CurrentWeather from '../../components/CurrentWeather/CurrentWeather';
@@ -10,6 +11,7 @@ import Button from '../../components/Buttons/Button/Button';
 import Favorites from '../../components/Favorites/Favorites';
 import * as actions from '../../store/actions/index';
 import {changeFavStarHandler} from '../../helper/utility';
+import Modal from '../../components/Modal/Modal';
 
 class Weather extends Component {
 
@@ -77,10 +79,22 @@ class Weather extends Component {
         })
     };
 
+    errorClose = () => {
+        this.props.onErrorClose();
+    }
+
     render () {
         return (
             <div className='Weather'>
                 <div className='BackImage'></div>
+                    {
+                        this.props.error ? 
+                        <Modal>
+                        <ErrorOutlineIcon style={{fontSize:50,color:'#ff0000'}} />
+                        <p>Oops! Something went wrong!</p>
+                        <Button btnType='Error' clicked={this.errorClose}>Go Home</Button>
+                        </Modal> : null
+                    }
                 <div className='WeatherLeftLayout'>
                    <div style={{display:'flex'}}>
                         <Input 
@@ -129,7 +143,8 @@ const mapStateToProps = state => {
         hourly: state.weather.hourlyForecast,
         weekly: state.weather.weeklyForecast,
         location: state.weather.location,
-        favorites: state.favoriteLocations.favorites
+        favorites: state.favoriteLocations.favorites,
+        error: state.weather.error
     }
 };
 
@@ -138,7 +153,8 @@ const mapDispatchToProps = dispatch => {
         onAddFavorites: (location) => dispatch(actions.addFavorites(location)),
         onRemoveFavorites: (index) => dispatch(actions.removeFavorites(index)),
         onRemoveAllFavorites: () => dispatch(actions.removeAllFavorites()),
-        onSubmit: (location) => dispatch(actions.fetchWeather(location))
+        onSubmit: (location) => dispatch(actions.fetchWeather(location)),
+        onErrorClose: () => dispatch(actions.errorClose())
     }
 }
 

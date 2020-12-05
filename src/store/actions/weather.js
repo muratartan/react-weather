@@ -23,22 +23,30 @@ export const fetchWeatherFail = (error) => {
     }
 };
 
+export const errorClose = () => {
+    return {
+        type: actionTypes.ERROR_CLOSE
+    }
+}
+
 export const fetchWeather = (location) => {
     return dispatch => {
         dispatch(fetchWeatherStart(location))
+        localStorage.setItem('locationName', location);
         axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=${geoCodeApiKey}`)
         .then(response => {
             const location = response.data.results[0].geometry.location;
             axios.get(`/onecall?lat=${location.lat}&lon=${location.lng}&appid=${apiKey}`)
             .then(response => {
-                console.log(response);
-                localStorage.setItem('locationName', location);
+                console.log(response);                
                 dispatch(fetchWeatherSuccess(response.data))
             })
             .catch(error=> {
                 dispatch(fetchWeatherFail(error))
             })
-        })
+        }).catch(
+            err => dispatch(fetchWeatherFail(err))
+        )
     }
 };
 

@@ -30,6 +30,10 @@ const reducer = (state= initialState, action) => {
                 return updateObject(state, {
                     error: action.error
                 })
+            case actionTypes.ERROR_CLOSE:
+                return updateObject(state, {
+                    error: null
+                })
             default:
                 return state
     }
