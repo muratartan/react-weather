@@ -28,13 +28,15 @@
 }
 
 .Light-Mode-Input-Color {
-    color: rgb(11, 11, 48);
-    font-weight: 600;
+    color: white;
+    font-weight: 400;
+    text-shadow: 1px 1px 3px #606060;
 }
 
 .Light-Mode-Input-Color::placeholder {
-    color: rgb(18, 18, 61);
-    
+    color: white;
+    font-weight: 400;
+    text-shadow: 1px 1px 3px #606060;    
 }
 
 .Light-Mode-Box-Shadow{

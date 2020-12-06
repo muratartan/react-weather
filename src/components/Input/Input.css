@@ -16,4 +16,5 @@
 
 .Input:focus::placeholder {
     color: transparent;
+    text-shadow: none;
 }
