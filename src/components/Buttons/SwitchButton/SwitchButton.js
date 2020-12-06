@@ -4,6 +4,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import { PinDropSharp } from '@material-ui/icons';
 
+import './SwitchButton.css';
+
 export default function SwitchLabels(props) {
   
   return (
@@ -17,6 +19,9 @@ export default function SwitchLabels(props) {
             color="primary"
           />
         }
+        classes={{
+          label: 'Label'
+        }}
         label="Light Mode"
       />
     </FormGroup>
