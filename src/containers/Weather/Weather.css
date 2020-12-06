@@ -8,11 +8,10 @@
 
 .BackImage {
     position: fixed;
-    background: url("../../assets/dark.jpg") no-repeat center;
-    background-size: cover;
     height: 100vh;
     width: 100%;
     z-index: -100;
+    transition: all .3s ease-in-out;
 }
 
 .WeatherLeftLayout {

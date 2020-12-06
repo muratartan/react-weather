@@ -12,6 +12,7 @@ import Favorites from '../../components/Favorites/Favorites';
 import * as actions from '../../store/actions/index';
 import {changeFavStarHandler} from '../../helper/utility';
 import Modal from '../../components/Modal/Modal';
+import '../../Mode-Selector/Mode-Selector.css';
 
 class Weather extends Component {
 
@@ -84,9 +85,10 @@ class Weather extends Component {
     }
 
     render () {
+        const modeBackImg = this.props.mode ? 'Light-Mode-BackImg' : 'Dark-Mode-BackImg';
         return (
             <div className='Weather'>
-                <div className='BackImage'></div>
+                <div className={['BackImage',modeBackImg].join(' ')}></div>
                     {
                         this.props.error ? 
                         <Modal close={this.errorClose}>
