@@ -7,8 +7,7 @@ const initialState = {
     hourlyForecast: null,
     weeklyForecast: null,
     error: null,
-    loading: false,
-    lightMode: false
+    loading: false
 };
 
 const reducer = (state= initialState, action) => {
@@ -37,10 +36,6 @@ const reducer = (state= initialState, action) => {
             case actionTypes.ERROR_CLOSE:
                 return updateObject(state, {
                     error: null
-                })
-            case actionTypes.MODE_SELECTOR:
-                return updateObject(state, {
-                    lightMode: action.value
                 })
             default:
                 return state

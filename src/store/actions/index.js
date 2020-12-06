@@ -1,6 +1,6 @@
 export {fetchWeather,
      errorClose,
-     modeSelector} from './weather';
+     } from './weather';
      
 export {
     addFavorites,

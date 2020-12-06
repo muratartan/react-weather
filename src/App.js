@@ -11,8 +11,8 @@ import * as actions from './store/actions/index';
 class App extends Component {
 
   state = {
-    checkedA: true,
-    checkedB: true
+    checkedA: false,
+    checkedB: false
   }
 
   componentDidMount() {
@@ -26,7 +26,6 @@ class App extends Component {
     this.setState({
       [event.target.name]: event.target.checked
     })
-    this.props.onChangeMode(this.state.checkedB);
   }
 
   render () {
@@ -34,24 +33,18 @@ class App extends Component {
       <div className='App'>
         <Header value={this.state.checkedB} clicked={this.changeMode}/>
         <Route path='/' exact component={Home} />
-        <Route path='/weather' component={Weather} /> 
+        <Route path='/weather' component={Weather} />
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    lightMode: state.weather.lightMode
-  }
-}
 
 const mapDispatchToProps = dispatch => {
   return {
     onRefreshHandler: (location) => dispatch(actions.fetchWeather(location)),
-    onGetFavorites: () => dispatch(actions.getLocalStorageFavs()),
-    onChangeMode: (value) => dispatch(actions.modeSelector(value))
+    onGetFavorites: () => dispatch(actions.getLocalStorageFavs())
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+export default connect(null,mapDispatchToProps)(App);
