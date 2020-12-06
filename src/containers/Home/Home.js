@@ -6,6 +6,7 @@ import Input from '../../components/Input/Input';
 import './Home.css';
 import Button from '../../components/Buttons/Button/Button';
 import {fetchWeather} from '../../store/actions/index';
+import '../../Mode-Selector/Mode-Selector.css';
 
 class Home extends Component {
 
@@ -36,12 +37,15 @@ class Home extends Component {
     }
 
     render () {
+        const modeImage = this.props.mode ? 'Light-Mode-BackImg' : 'Dark-Mode-BackImg';
+        
         return (
-            <div className='Home'>                
+            <div className={['Home',modeImage].join(' ')}>                
                 <div style={{marginBottom: 60}}>
                     <h1 className='Title'>Weather is life</h1>
                     <div className='SearchInput'>
                         <Input 
+                        mode= {this.props.mode}
                         placeholder='Search location...' 
                         value={this.state.locationName}
                         clicked= {this.getWeatherOnKeyPress}

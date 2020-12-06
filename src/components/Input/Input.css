@@ -6,12 +6,11 @@
     border-bottom: 2px solid turquoise;
     outline: none;
     font-size: 18px;
-    color: whitesmoke;
     text-align: center;
 }
 
 ::placeholder {
-    color: white;
+    color: seashell;
     transition: all 0.3s ease-in-out;
 }
 
