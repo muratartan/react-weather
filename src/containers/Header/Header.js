@@ -11,7 +11,7 @@ class Home extends Component {
                 <Logo height='65px' />
                 <a href='https://github.com/hangeldimyrat/react-weather' 
                 target='_blank'><i class='fab fa-github'></i></a>
-                <SwitchButton />
+                <SwitchButton checked={this.props.value} clicked={this.props.clicked} />
             </div>
         );
     }

@@ -2,24 +2,17 @@ import React from 'react';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
+import { PinDropSharp } from '@material-ui/icons';
 
-export default function SwitchLabels() {
-  const [state, setState] = React.useState({
-    checkedA: true,
-    checkedB: true,
-  });
-
-  const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-  };
-
+export default function SwitchLabels(props) {
+  
   return (
     <FormGroup row>
       <FormControlLabel
         control={
           <Switch
-            checked={state.checkedB}
-            onChange={handleChange}
+            checked={props.checked}
+            onChange={props.clicked}
             name="checkedB"
             color="primary"
           />

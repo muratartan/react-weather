@@ -1,4 +1,7 @@
-export {fetchWeather, errorClose} from './weather';
+export {fetchWeather,
+     errorClose,
+     modeSelector} from './weather';
+     
 export {
     addFavorites,
     removeFavorites,
