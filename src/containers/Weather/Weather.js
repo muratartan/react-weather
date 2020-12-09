@@ -132,7 +132,8 @@ class Weather extends Component {
                             clicked={this.removeAllFavoritesHandler}>Remove All</Button> : null
                    }
                     {
-                    this.props.favorites.map((item,index) => (
+                    this.props.favorites.length > 0
+                    ? this.props.favorites.map((item,index) => (
                         <Favorites 
                             locationName = {item.name}
                             key = {item.name}
@@ -140,7 +141,7 @@ class Weather extends Component {
                             temp = {item.temp}
                             clicked={() => this.removeFavoritesHandler(index)}
                             showFavoriteCurrentWeather= {() => this.getFavoriteWeather(item.name)}/>
-                    ))
+                    )) : null
                     }
                </div>
                <div className='WeatherRightLayout'>

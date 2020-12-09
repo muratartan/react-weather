@@ -5,8 +5,9 @@ import {connect} from 'react-redux';
 import Input from '../../components/Input/Input';
 import './Home.css';
 import Button from '../../components/Buttons/Button/Button';
-import {fetchWeather} from '../../store/actions/index';
+import * as actions from '../../store/actions/index';
 import '../../Mode-Selector/Mode-Selector.css';
+import Favorites from '../../components/Favorites/Favorites';
 
 class Home extends Component {
 
@@ -51,7 +52,19 @@ class Home extends Component {
                         clicked= {this.getWeatherOnKeyPress}
                         changed={event =>this.inputChangedHandler(event) } />
                         <Button btnType='Search' clicked={this.getWeatherHandler} ><BsSearch /></Button>
-                    </div>                   
+                    </div>    
+                    {
+                    this.props.favorites.length > 0
+                    ? this.props.favorites.map((item,index) => (
+                        <Favorites 
+                            locationName = {item.name}
+                            key = {item.name}
+                            icon = {item.icon}
+                            temp = {item.temp}
+                            clicked={() => this.props.onRemoveFavorites(index)}
+                            showFavoriteCurrentWeather= {() => this.getFavoriteWeather(item.name)}/>
+                    )) : null
+                    }               
                 </div>
                 
             </div>
@@ -59,10 +72,17 @@ class Home extends Component {
     }    
 };
 
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = state => {
     return {
-        onSubmit: (location) => dispatch(fetchWeather(location))
+        favorites: state.favoriteLocations.favorites
     }
 }
 
-export default connect(null, mapDispatchToProps)(Home);
+const mapDispatchToProps = dispatch => {
+    return {
+        onSubmit: (location) => dispatch(actions.fetchWeather(location)),
+        onRemoveFavorites: (index) => dispatch(actions.removeFavorites(index))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
