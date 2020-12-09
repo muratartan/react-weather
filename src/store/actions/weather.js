@@ -36,7 +36,6 @@ export const fetchWeather = (location) => {
         localStorage.setItem('locationName', location);
         axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=${geoCodeApiKey}`)
         .then(response => {
-            console.log(response.data)
             const location = response.data.results[0].geometry.location;
             axios.get(`/onecall?lat=${location.lat}&lon=${location.lng}&appid=${apiKey}`)
             .then(response => { 

@@ -6,5 +6,6 @@ export {
     addFavorites,
     removeFavorites,
     removeAllFavorites,
-    getLocalStorageFavs
+    getLocalStorageFavs,
+    fetchFavorite
 } from './favorites';

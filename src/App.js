@@ -17,9 +17,14 @@ class App extends Component {
 
   componentDidMount() {
     const locationName = localStorage.getItem('locationName');
-    if(locationName) this.props.onRefreshHandler(localStorage.getItem('locationName'));
+    if(locationName) this.props.onRefreshHandler(locationName);
     const favorites = localStorage.getItem('favorites');
-    if(favorites) this.props.onGetFavorites();
+    if(favorites) {
+      const favs = JSON.parse(favorites);
+      for(let i = 0; i < favs.length; i++){
+        this.props.onGetFavorites(favs[i])
+      }
+    }
   };
 
   changeMode = (event) => {
@@ -43,7 +48,7 @@ class App extends Component {
 const mapDispatchToProps = dispatch => {
   return {
     onRefreshHandler: (location) => dispatch(actions.fetchWeather(location)),
-    onGetFavorites: () => dispatch(actions.getLocalStorageFavs())
+    onGetFavorites: (locationName) => dispatch(actions.fetchFavorite(locationName))
   }
 }
 
