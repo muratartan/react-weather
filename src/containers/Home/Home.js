@@ -37,6 +37,11 @@ class Home extends Component {
         }
     }
 
+    getFavoriteDetails = (name) => {
+        this.props.onSubmit(name);
+        this.props.history.push('/weather');
+    }
+
     render () {
         const modeImage = this.props.mode ? 'Light-Mode-BackImg' : 'Dark-Mode-BackImg';
         
@@ -62,7 +67,7 @@ class Home extends Component {
                             icon = {item.icon}
                             temp = {item.temp}
                             clicked={() => this.props.onRemoveFavorites(index)}
-                            showFavoriteCurrentWeather= {() => this.getFavoriteWeather(item.name)}/>
+                            showFavoriteCurrentWeather= {() => this.getFavoriteDetails(item.name)}/>
                     )) : null
                     }               
                 </div>
