@@ -1,14 +1,30 @@
 .Home {
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
     transition: all .3s ease-in-out;
 }
 
+.HomeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
 .SearchInput {
     display: flex;
+    margin-bottom: 22px;
+}
+
+.HomeBackImage {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: -100;
+    transition: all .3s ease-in-out;
 }
 
 .Title {
@@ -17,6 +33,7 @@
     font-family: "Comic Sans MS", cursive, sans-serif;
     margin-bottom: 70px;
     font-size: 40px;
+    text-shadow: 1px 1px 2px grey;
 }
 
 @media (max-width: 500px) {

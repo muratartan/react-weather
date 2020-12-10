@@ -46,8 +46,9 @@ class Home extends Component {
         const modeImage = this.props.mode ? 'Light-Mode-BackImg' : 'Dark-Mode-BackImg';
         
         return (
-            <div className={['Home',modeImage].join(' ')}>                
-                <div style={{marginBottom: 60}}>
+            <div className='Home'>  
+            <div className={['HomeBackImage',modeImage].join(' ')}></div>              
+                <div style={this.props.favorites.length ? {paddingTop:100} : null} className='HomeContainer'>
                     <h1 className='Title'>Weather is life</h1>
                     <div className='SearchInput'>
                         <Input 
@@ -56,7 +57,9 @@ class Home extends Component {
                         value={this.state.locationName}
                         clicked= {this.getWeatherOnKeyPress}
                         changed={event =>this.inputChangedHandler(event) } />
-                        <Button btnType='Search' clicked={this.getWeatherHandler} ><BsSearch /></Button>
+                        <Button 
+                            btnType='Search' 
+                            clicked={this.getWeatherHandler} ><BsSearch /></Button>
                     </div>    
                     {
                     this.props.favorites.length > 0
