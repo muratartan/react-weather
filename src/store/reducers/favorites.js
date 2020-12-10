@@ -2,8 +2,7 @@ import * as actionTypes from '../actions/actionTypes';
 import {updateObject} from '../../helper/utility';
 
 const initialState = {
-    favorites: [],
-    favs: []
+    favorites: []
 }
 
 const reducer = (state= initialState, action) => {
@@ -14,8 +13,7 @@ const reducer = (state= initialState, action) => {
             const favs = newFavs.map(el=> el.name)
             localStorage.setItem('favorites',JSON.stringify(favs));
             return updateObject(state, {
-                favorites: newFavs,
-                favs: favs
+                favorites: newFavs
             });
 
         case actionTypes.REMOVE_FAVORITES:
@@ -23,15 +21,13 @@ const reducer = (state= initialState, action) => {
             const newRemovedFavs = newFavorites.map(el=>el.name)
             localStorage.setItem('favorites',JSON.stringify(newRemovedFavs));
             return updateObject(state,{
-                favorites: newFavorites,
-                favs: newRemovedFavs
+                favorites: newFavorites
             });
 
         case actionTypes.REMOVE_ALL_FAVORITES:
             localStorage.removeItem('favorites');
             return updateObject(state, {
-                favorites: [],
-                favs: []
+                favorites: []
             });
         case actionTypes.GET_LOCALSTORAGE_FAVS:
             const loadFavs = JSON.parse(localStorage.getItem('favorites'));

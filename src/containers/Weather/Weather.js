@@ -127,8 +127,7 @@ const mapStateToProps = state => {
         weekly: state.weather.weeklyForecast,
         location: state.weather.location,
         favorites: state.favoriteLocations.favorites,
-        error: state.weather.error,
-        favs: state.favoriteLocations.favs
+        error: state.weather.error
     }
 };
 
