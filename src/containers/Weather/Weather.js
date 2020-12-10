@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {BsSearch} from 'react-icons/bs';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
+import ExpandLessRounded from '@material-ui/icons/ExpandLessRounded';
 
 import './Weather.css';
 import CurrentWeather from '../../components/CurrentWeather/CurrentWeather';
@@ -14,10 +15,12 @@ import {changeFavStarHandler} from '../../helper/utility';
 import Modal from '../../components/Modal/Modal';
 import '../../Mode-Selector/Mode-Selector.css';
 
+
 class Weather extends Component {
 
     state = {
-        locationName: ''
+        locationName: '',
+        showBackToTop: false
     };
 
     addFavoritesHandler = () => {
@@ -62,7 +65,11 @@ class Weather extends Component {
         })
     };
 
+    backToTop = () => window.scrollTo({top:0,left:0,behavior: 'smooth'});
+    handleScroll = () => this.setState({showBackToTop: window.scrollY > 600});
+
     render () {
+        window.addEventListener('scroll', this.handleScroll);
         const modeBackImg = this.props.mode ? 'Light-Mode-BackImg' : 'Dark-Mode-BackImg';
         return (
             <div className='Weather'>
@@ -114,6 +121,10 @@ class Weather extends Component {
                         locationName={this.props.location} 
                         hourlyData={this.props.hourly} 
                         weeklyData={this.props.weekly}/>
+                    {
+                        this.state.showBackToTop ?
+                        <Button btnType='BackToTop' clicked={this.backToTop}><ExpandLessRounded /></Button> : null
+                    }
                </div>
             </div>
         );
