@@ -56,3 +56,15 @@
 .Remove-All:hover {
     background-color: #ff2f2f;
 }
+
+.BackToTop {
+    width: 40px;
+    height: 40px;
+    bottom: 30px;
+    right: 35px;
+    position: fixed;
+    color: whitesmoke;
+    background-color: rgba(140, 115, 207, 0.7);
+    border-radius: 100px;
+    transition: all .1s ease-in;
+}
