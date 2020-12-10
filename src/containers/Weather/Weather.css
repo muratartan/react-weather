@@ -55,3 +55,9 @@
           padding: 0;
       }
   }
+
+  @media (max-width:500px) {
+      input {
+          width: 85%!important;
+      }
+  }

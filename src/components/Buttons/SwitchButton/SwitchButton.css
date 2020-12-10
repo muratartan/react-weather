@@ -1,4 +1,10 @@
 .Label {
     color: rgb(126, 144, 196);
-    font-weight: bold;
+    font-weight: bold!important;
+}
+
+@media (max-width:500px) {
+    .Label {
+        display: none;
+    }
 }

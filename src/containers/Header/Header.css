@@ -30,5 +30,6 @@ i {
 @media (max-width:600px) {
     .Header {
         padding:0;
+        height: 50px;
     }
 }

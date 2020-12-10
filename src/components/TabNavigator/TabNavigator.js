@@ -33,7 +33,7 @@ const IconLabelTabs = (props) => {
                 value={props.value}
                 onChange={props.changed}
                 variant="fullWidth"
-                indicatorColor="inherit"
+                indicatorColor="primary"
                 textColor="inherit"
                 aria-label="icon label tabs example"
                 className='Tabs'
