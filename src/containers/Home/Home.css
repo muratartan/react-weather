@@ -36,7 +36,7 @@
     text-shadow: 1px 1px 2px grey;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .SearchInput {
         flex-direction: column;
         align-items: center;
@@ -44,5 +44,11 @@
 
     .SearchInput button {
         margin-top: 15px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1024px){
+    .HomeContainer {
+        width: 60%;
     }
 }
