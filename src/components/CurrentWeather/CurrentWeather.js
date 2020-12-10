@@ -54,4 +54,4 @@ const currentWeather = props => {
         }
     }
 
-export default connecy(mapStateToProps)(currentWeather);
+export default connect(mapStateToProps)(currentWeather);

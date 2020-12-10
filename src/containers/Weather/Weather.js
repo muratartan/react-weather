@@ -17,34 +17,18 @@ import '../../Mode-Selector/Mode-Selector.css';
 class Weather extends Component {
 
     state = {
-        locationName: '',
-        isFavorite: false
+        locationName: ''
     };
 
-    componentDidMount () {
-        setTimeout(()=>{
-           this.setState({isFavorite:changeFavStarHandler(this.props.favs, this.props.location)});
-        },0);
-    }
-
     addFavoritesHandler = () => {
-        if(!changeFavStarHandler(this.props.favs, this.props.location)) {
+        const favs = this.props.favorites.map(el=>el.name);
+        if(!changeFavStarHandler(favs, this.props.location)) {
             this.props.onAddFavorites({
                 name: this.props.location,
                 icon: this.props.current.weather[0].icon,
                 temp: this.props.current.temp
             });
-        };        
-        setTimeout(()=>{
-            this.setState({isFavorite:changeFavStarHandler(this.props.favs, this.props.location)});
-         },0);
-    };
-
-    removeFavoritesHandler = (index) => {
-        this.props.onRemoveFavorites(index);
-        setTimeout(()=>{
-            this.setState({isFavorite:changeFavStarHandler(this.props.favs, this.props.location)});
-         },0);
+        };
     };
 
     removeAllFavoritesHandler = () => {
@@ -56,35 +40,20 @@ class Weather extends Component {
 
     getWeatherHandler = () => {
         this.props.onSubmit(this.state.locationName);
-        setTimeout(()=>{
             this.setState({
-                locationName: '',
-                isFavorite:changeFavStarHandler(this.props.favs, this.props.location)
+                locationName: ''
             });
-         },0);
     };
 
     getWeatherOnKeyPress = (e) => {
         if (e.keyCode === 13) {
             if (this.state.locationName !== '') {
                 this.props.onSubmit(this.state.locationName);
-                setTimeout(()=>{
                     this.setState({
-                        locationName: '',
-                        isFavorite:changeFavStarHandler(this.props.favs, this.props.location)
+                        locationName: ''
                     });
-                 },0);
             }
         }
-    }
-
-    getFavoriteWeather = (name) => {
-        this.props.onSubmit(name)
-        setTimeout(()=>{
-            this.setState({
-                isFavorite:changeFavStarHandler(this.props.favs,this.props.location)
-            })
-        },0)
     }
 
     inputChangedHandler = (event) => {
@@ -93,10 +62,6 @@ class Weather extends Component {
         })
     };
 
-    errorClose = () => {
-        this.props.onErrorClose();
-    }
-
     render () {
         const modeBackImg = this.props.mode ? 'Light-Mode-BackImg' : 'Dark-Mode-BackImg';
         return (
@@ -104,10 +69,10 @@ class Weather extends Component {
                 <div className={['BackImage',modeBackImg].join(' ')}></div>
                     {
                         this.props.error ? 
-                        <Modal close={this.errorClose}>
+                        <Modal close={ this.props.onErrorClose}>
                         <ErrorOutlineIcon style={{fontSize:50,color:'#ff0000'}} />
                         <p>Oops! Something went wrong!</p>
-                        <Button btnType='Error' clicked={this.errorClose}>Try Again</Button>
+                        <Button btnType='Error' clicked={ this.props.onErrorClose}>Try Again</Button>
                         </Modal> : null
                     }
                 <div className='WeatherLeftLayout'>
@@ -123,7 +88,7 @@ class Weather extends Component {
                         locationName={this.props.location} 
                         currentData= {this.props.current}
                         clicked= {this.addFavoritesHandler}
-                        isFavorite= {this.state.isFavorite}/>
+                        />
                    {this.props.favorites.length ? <span>Favorite Locations</span> : null}
                    {
                        this.props.favorites.length >= 2 
@@ -139,8 +104,8 @@ class Weather extends Component {
                             key = {item.name}
                             icon = {item.icon}
                             temp = {item.temp}
-                            clicked={() => this.removeFavoritesHandler(index)}
-                            showFavoriteCurrentWeather= {() => this.getFavoriteWeather(item.name)}/>
+                            clicked={() => this.props.onRemoveFavorites(index)}
+                            showFavoriteCurrentWeather= {() => this.props.onSubmit(item.name)}/>
                     )) : null
                     }
                </div>
